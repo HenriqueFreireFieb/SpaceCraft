@@ -12,12 +12,17 @@ public class Player : MonoBehaviour
 
     public bool possoAumentarVelocidade = false;
 
+    public bool possoUsarOCampoDeForca = false;
+
     [SerializeField]
     private GameObject _disparoTriploPrefab;
 
     // Variavel responsavel pelo colldown entre os tiros
     [SerializeField]
     private float _tempoDeDisparo = 0.30f;
+
+    [SerializeField]
+    private GameObject _CampoDeForca;
     
     // Variavel responsavel por checar se o colldown dos tiros ja acabou
     
@@ -98,6 +103,14 @@ public class Player : MonoBehaviour
     }
 
     public void DanoAoPlayer(){
+        if (possoUsarOCampoDeForca == true){
+        
+            possoUsarOCampoDeForca = false; // Desativando o campo de força
+            _CampoDeForca.SetActive(false); // Desativando visualmente o campo de força
+            return; // Retornando ao inicio do metodo DanoAoPlayer()
+
+        }
+        
         vidas--;
 
         if (vidas < 1){
@@ -147,5 +160,18 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(7.0f);// Aguarde 7 segundos em seguida execute
         possoAumentarVelocidade = false; // desativando disparo triplo
 }
+
+    public void LigarCampoDeForca(){
+        // Habilitando o campo de força
+        possoUsarOCampoDeForca = true;
+
+        // Ativando visualmente o campo de força
+        _CampoDeForca.SetActive(true);
+    }
+
+    public IEnumerator CampoDeForcaRotina(){
+        yield return new WaitForSeconds(7.0f);// Agurde 7 segundos em seguida execute
+        possoUsarOCampoDeForca = false; // desativando campo de força
+    }
 
 }

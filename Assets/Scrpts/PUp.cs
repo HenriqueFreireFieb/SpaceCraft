@@ -48,11 +48,12 @@ public class PUp : MonoBehaviour
 
                 Destroy(this.gameObject);
             
-            }else if(PUpID == 3){
+            }else if(PUpID == 2){
                 
                 // Power up Escudo
+                player.LigarCampoDeForca();
 
-
+                Destroy(this.gameObject);
             }
             }else{
                 Debug.Log("O objeto "+this.name+" esta em colisão com "+other.name);
