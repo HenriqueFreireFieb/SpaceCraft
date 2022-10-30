@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a70ae4541329e4b9821fdd7798a3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosaoDoInimgoPrefab: {fileID: 3632481315986987818, guid: e2a1975d146010d488ba0d0ce244f24a, type: 3}

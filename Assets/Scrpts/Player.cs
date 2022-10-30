@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
         
         // posição inicial do jogador
         transform.position = new Vector3(0,0,0);
+
+        // Ocultando campo de força
+        _CampoDeForca.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,6 +66,12 @@ public class Player : MonoBehaviour
         //atirando (caso espaço ou potão esquerdo do mouse seja pressionado)
         if(Input.GetKeyDown(KeyCode.Space)|Input.GetMouseButtonDown(0)){
             Disparo();
+        }
+
+
+        // Ativando campo de força
+        if (possoUsarOCampoDeForca == true){
+            LigarCampoDeForca();
         }
     }
 
@@ -169,9 +178,9 @@ public class Player : MonoBehaviour
         _CampoDeForca.SetActive(true);
     }
 
-    public IEnumerator CampoDeForcaRotina(){
+    /*public IEnumerator CampoDeForcaRotina(){
         yield return new WaitForSeconds(7.0f);// Agurde 7 segundos em seguida execute
         possoUsarOCampoDeForca = false; // desativando campo de força
-    }
+    }*/
 
 }
