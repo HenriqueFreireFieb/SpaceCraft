@@ -10,10 +10,18 @@ public class IAInimigo : MonoBehaviour
     [SerializeField]
     private GameObject _explosaoDoInimgoPrefab;
 
+    // Importando o script gerenciadorIU
+     private GerenciadorIU _gerenciadorIU;
+
+     // Variavel responsavel por armazenar o efeito sonoro de explosão
+     [SerializeField]
+     private AudioClip _audioExplosao;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       // Acessando o componente de script GerenciadorIU do objeto Canvas
+        _gerenciadorIU = GameObject.Find("Canvas").GetComponent<GerenciadorIU>();
     }
 
     // Update is called once per frame
@@ -39,7 +47,13 @@ public class IAInimigo : MonoBehaviour
 
             // Ativando a animação de explosão do player
             Instantiate(_explosaoDoInimgoPrefab, transform.position, Quaternion.identity);
-        
+
+            // Ativando o efeito sonoro de explosão
+            AudioSource.PlayClipAtPoint(_audioExplosao, Camera.main.transform.position, 1.0f);
+
+            // Adicionando 100 pontos ao placar do jogador
+            _gerenciadorIU.AtualizarPlacar();
+
             Destroy(this.gameObject); // Destrua este objeto
 
         }else if(other.tag == "Player")
@@ -53,6 +67,13 @@ public class IAInimigo : MonoBehaviour
 
                 // Ativando a animação de explosão do player
                 Instantiate(_explosaoDoInimgoPrefab, transform.position, Quaternion.identity);
+
+                // Ativando o efeito sonoro de explosão
+                AudioSource.PlayClipAtPoint(_audioExplosao, Camera.main.transform.position, 1.0f);
+
+                // Adicionando 100 pontos ao placar do jogador
+                _gerenciadorIU.AtualizarPlacar();
+
             }
             Destroy(this.gameObject); // Destrua este objeto
         }

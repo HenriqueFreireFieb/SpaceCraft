@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1171896761743536318}
   - component: {fileID: 1171896761743536305}
   - component: {fileID: 1171896761743536304}
+  - component: {fileID: 4548751599472079219}
   m_Layer: 0
   m_Name: "PU-CampoDeFor\xE7a"
   m_TagString: Untagged
@@ -116,3 +117,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocidade: 3.5
   PUpID: 2
+  _audioPU: {fileID: 8300000, guid: 730d1035eb8c8dc4b91e5dd247592fde, type: 3}
+--- !u!95 &4548751599472079219
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171896761743536307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3bc4240f5bdcbf148960b7c612710591, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

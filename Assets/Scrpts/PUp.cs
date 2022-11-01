@@ -12,6 +12,9 @@ public class PUp : MonoBehaviour
     [SerializeField]
     private int PUpID;
 
+    [SerializeField]
+    private AudioClip _audioPU;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,11 @@ public class PUp : MonoBehaviour
     {
         transform.Translate(Vector3.down * _velocidade * Time.deltaTime);
 
+        if (transform.position.y < -6.0f)
+        {
+            Destroy(this.gameObject);
+        }
+
 
     }
 
@@ -30,9 +38,10 @@ public class PUp : MonoBehaviour
     {
         Player player = other.GetComponent<Player>(); // Importando o script Player
 
-        if (other.tag == "Player")// Verificando se o objeto est� em colis�o com o player ou outro objeto
+        if (other.tag == "Player")// Verificando se o objeto está em colisão com o player ou outro objeto
         {
             if(player != null){
+            AudioSource.PlayClipAtPoint(_audioPU, Camera.main.transform.position, 1.0f);
             
             // Power up Disparo triplo
             if(PUpID == 0){ 

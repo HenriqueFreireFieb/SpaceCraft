@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8755142317023099125}
   - component: {fileID: 1108133763850569604}
   - component: {fileID: 4353339176109810}
+  - component: {fileID: 6053636782290046360}
   m_Layer: 0
   m_Name: ExplosaoDoInimigo
   m_TagString: Untagged
@@ -105,3 +106,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6053636782290046360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3632481315986987818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c819de8f6f691846968da47cb71ff91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
